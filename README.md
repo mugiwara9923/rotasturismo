@@ -51,10 +51,4 @@ Bom Jesus -> Teresina (rota alternativa)
 
 ## 🧠 Lógica da função de busca
 
-A função `buscarCaminhos` utiliza **recursão e backtracking**:
-
-1. Marca o vértice atual como visitado
-2. Se chegou no destino, imprime o caminho e compara tamanhos
-3. Senão, chama recursivamente para os vizinhos
-4. Ao voltar, **desmarca o vértice atual** para permitir novos caminhos
-
+A função buscarCaminhos é responsável por encontrar todos os caminhos possíveis entre duas cidades no grafo. Ela usa recursão junto com uma técnica chamada backtracking, que basicamente permite "explorar e voltar atrás" para testar outros caminhos possíveis. A ideia é a seguinte: a cada chamada da função, ela visita uma cidade, marca essa cidade como visitada, e adiciona ao caminho atual. Em seguida, ela verifica se essa cidade é o destino final. Se for, imprime o caminho encontrado e já aproveita pra verificar se ele é o menor ou o maior até agora, comparando os tamanhos. Se a cidade atual ainda não for o destino, a função continua tentando seguir por todas as cidades vizinhas conectadas a ela, chamando a si mesma de forma recursiva para cada possibilidade. Esse processo vai acontecendo até que o caminho leve até Parnaiba. Quando termina de testar um caminho, a função precisa voltar atrás, por isso ela desmarca a cidade atual como visitada e remove ela do caminho atual. Isso é importante porque permite tentar outros caminhos que passem por ela mais tarde, sem confundir com os anteriores. Esse mecanismo de marcar, testar, e depois desmarcar é o que caracteriza o backtracking, e garante que todos os caminhos possíveis serão testados, um por um.
